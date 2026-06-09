@@ -241,7 +241,9 @@ def control_rows(clusters, parent_to_sub, cluster_colors, subcluster_colors, mes
 
 # ---------- Dash app ----------
 app = dash.Dash(__name__)
-USERS = {"user1": "pw1", "user2": "pw2"}
+USERS = {
+    os.environ.get('DASH_USER', 'user'): os.environ.get('DASH_PASSWORD', 'password')
+}
 auth = BasicAuth(app, USERS)
 
 app.layout = html.Div([
