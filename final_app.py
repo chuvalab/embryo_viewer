@@ -12,7 +12,7 @@ from dash_auth import BasicAuth
 
 
 ############## define data ###############
-H5AD_FILE = "../../mockdata.h5ad"
+H5AD_FILE = "../mockdata.h5ad"
 
 CLUSTER_COL = "cluster"
 SUBCLUSTER_COL = "subcluster"
@@ -29,10 +29,7 @@ COLORS_FILE_COLOR_COLUMN = ""#"color code"
 
 MESH_FOLDER = "scaffolds"
 
-PANEL_SPLIT = [
-    {"label": "Embryo", "prefix": "e"},
-    {"label": "Placenta", "prefix": "p"},
-]
+#PANEL_SPLIT = [{"label": "Embryo", "prefix": "e"},{"label": "Placenta", "prefix": "p"},]
 
 # disable split:
 PANEL_SPLIT = None
@@ -1037,4 +1034,5 @@ def update_figures(
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    port = int(os.environ.get('PORT', 8050))
+    app.run(debug=False, host='0.0.0.0', port=port)
