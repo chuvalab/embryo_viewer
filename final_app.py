@@ -15,7 +15,7 @@ if not os.path.exists("../mockdata.h5ad"):
     s3 = boto3.client('s3',
         endpoint_url=os.environ['RAILWAY_BUCKET_ENDPOINT_URL'],
         aws_access_key_id=os.environ['RAILWAY_BUCKET_ACCESS_KEY_ID'],
-        aws_secret_access_key=os.environ['RAILWAY_BUCKET_ACCESS_SCRET_ACCES_KEY']
+        aws_secret_access_key=os.environ['RAILWAY_BUCKET_SECRET_ACCESS_KEY']
     )
     s3.download_file(os.environ['RAILWAY_BUCKET_NAME'], 'mockdata.h5ad', 'mockdata.h5ad')
 
