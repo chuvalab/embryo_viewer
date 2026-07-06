@@ -13,7 +13,7 @@ import boto3
 
 if not os.path.exists("mockdata.h5ad"):
     s3 = boto3.client('s3',
-        region=os.environ["BUCKET_REGION"],
+        region_name=os.environ["BUCKET_REGION"],
         endpoint_url=os.environ['BUCKET_ENDPOINT_URL'],
         aws_access_key_id=os.environ['BUCKET_ACCESS_KEY_ID'],
         aws_secret_access_key=os.environ['BUCKET_SECRET_ACCESS_KEY']
